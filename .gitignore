@@ -1,0 +1,14 @@
+# generated common files
+react/common/
+extension/common/
+
+**/node_modules/**/*
+react/.expo/*
+**/npm-debug.*
+*.jks
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+react/web-build/
+react/web-report/

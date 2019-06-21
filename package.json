@@ -1,0 +1,25 @@
+{
+  "name": "ogame-mobile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "watcher.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "dev": "node watcher.js both",
+    "dev:extension": "node watcher.js extension",
+    "dev:react": "(node watcher.js react & npm run expo --prefix ./react)"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "fs-extra": "^8.0.1",
+    "klaw": "^3.0.0",
+    "klaw-sync": "^6.0.0",
+    "node-watch": "^0.6.2",
+    "path": "^0.12.7",
+    "through2": "^3.0.1"
+  }
+}

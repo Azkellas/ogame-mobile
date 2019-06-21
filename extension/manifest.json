@@ -1,0 +1,31 @@
+{
+  "name": "Ogame Mobile",
+  "short_name": "OMobile",
+  "description": "Ogame for mobile",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "hot-reload.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.ogame.gameforge.com/game/index.php?*"
+      ],
+      "js": [
+        "common/third-parties/jquery.min.js",
+        "common/scripts/hotkeys.js"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
+    }
+  ],
+  "browser_action": {
+    "default_title": "Zerogame"
+  },
+  "permissions": [
+    "https://*.ogame.gameforge.com/game/index.php?*"
+  ]
+}
