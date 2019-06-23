@@ -12,3 +12,5 @@ react/.expo/*
 *.orig.*
 react/web-build/
 react/web-report/
+
+\.vscode/

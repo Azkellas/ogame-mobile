@@ -16,7 +16,13 @@
       ],
       "js": [
         "common/third-parties/jquery.min.js",
-        "common/scripts/hotkeys.js"
+        "common/third-parties/slideout.js",
+        "common/scripts/at-runstart.js",
+        "common/scripts/sidemenus.js"
+      ],
+      "css": [
+        "common/styles/main.css",
+        "common/styles/slideout.css"
       ],
       "run_at": "document_start",
       "all_frames": false

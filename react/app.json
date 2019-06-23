@@ -21,14 +21,19 @@
       "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
-      "**/*"
+      "assets/**",
+      "common/**"
     ],
+    "packagerOpts": {
+      "assetExts": ["txt"]
+    },
+
     "ios": {
       "supportsTablet": true
     },
     "android": {
-      "package": "com.azke.ogame_mobile",
-      "permissions": []
+      "package": "com.azke.ogame_mobile"
+      //"permissions": ["storage"]
     }
   }
 }

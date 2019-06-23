@@ -19,7 +19,7 @@ function log(logType, extension, ...args) {
 const commonRegex = new RegExp(__dirname + '/common/');
 
 function getReactFileName(fileName) {
-    return fileName.replace(commonRegex,__dirname + '/react/common/').replace(/\.js$/, '.json');
+    return fileName.replace(commonRegex,__dirname + '/react/common/') + '.txt';
 }
 
 function getExtensionFileName(fileName) {
@@ -27,7 +27,7 @@ function getExtensionFileName(fileName) {
 }
 
 function getRealFileName(fileName) {
-    return fileName.replace('/extension/common/', '/common/').replace('/react/common/', '/common/').replace(/\.json$/, '.js');
+    return fileName.replace('/extension/common/', '/common/').replace('/react/common/', '/common/').replace(/\.txt$/, '');
 }
 
 
@@ -48,45 +48,25 @@ if (!arg || arg == 'both') {
     process.exit();
 }
 
-function copyToExtension(fileName, event) {
-    const extensionFileName = getExtensionFileName(fileName);
-    fs.copy(fileName, extensionFileName, copyError => {
+function copyFile(fileName, newFileName, type, event) {
+    fs.copy(fileName, newFileName, copyError => {
         if (copyError) {
-            log('Error', 'Extension', 'Could not copy: ' + fileName + ': ' + copyError + ' (event: ' + event + '), ' + extensionFileName);
+            log('Error', type, 'Could not copy: ' + fileName + ': ' + copyError + ' (event: ' + event + '), ' + newFileName);
         } else {
-            log('Success', 'Extension', 'Copied ' + fileName + ' to ' + extensionFileName + ' (event: ' + event + ')');
+            log('Success', type, 'Copied ' + fileName + ' to ' + newFileName + ' (event: ' + event + ')');
         }
     });
-}
-
-function copyToReact(fileName, event) {
-    fs.readFile(fileName, 'utf8', (readError, fileData) => {
-        if (readError) {
-            log('Error', 'React', 'Could not open ' + fileName + ': ' + readError  + ' (event: ' + event + ')');
-            return;
-        }
-
-        const reactFileName = getReactFileName(fileName);
-        const json = `{ "script" : "` + fileData.replace(/\n/g, '\\n') + `"}`;
-        fs.outputFile(reactFileName, json, (writeError) => {
-            if (writeError) {
-                log('Error', 'React', 'Could not save ' + fileName + ': ' + writeError + ' (event: ' + event + '), ' + reactFileName);
-            } else {
-                log('Success', 'React', 'Saved  ' + fileName + ' to ' + reactFileName + ' (event: ' + event + ')');
-            }
-        });
-    });  
 }
 
 function manageFile(fileName, event) {
     // copy file to extension dir
     if (manageExtension) {
-        copyToExtension(fileName, event);
+        copyFile(fileName, getExtensionFileName(fileName), 'Extension', event);
     }
 
     // copy to react dir
     if (manageReact) {
-        copyToReact(fileName, event);
+        copyFile(fileName, getReactFileName(fileName), 'React', event);
     }
 
 }
@@ -108,14 +88,14 @@ function copyNewFiles() {
         if (manageExtension) {
             const extensionFileName = getExtensionFileName(fileName);
             if (!fs.existsSync(extensionFileName) || fs.statSync(fileName).mtimeMs > fs.statSync(extensionFileName).mtimeMs) {
-                copyToExtension(fileName, 'first check');
+                copyFile(fileName, extensionFileName, 'Extension', 'first check');
 
             }
         }
         if (manageReact) {
             const reactFileName = getReactFileName(fileName);
             if (!fs.existsSync(reactFileName) || fs.statSync(fileName).mtimeMs > fs.statSync(reactFileName).mtimeMs) {
-                copyToReact(fileName, 'first check');
+                copyFile(fileName, reactFileName, 'React', 'first check');
             }
         }
     });
@@ -123,7 +103,7 @@ function copyNewFiles() {
 
 // get rid of removed filed in generated dir
 function removeFiles(type) {
-    const dirPath = __dirname + '/' + (type == 'Extension' ? 'extension' : 'react') + '/common/';
+    const dirPath = __dirname + '/' + (type === 'Extension' ? 'extension' : 'react') + '/common/';
     if (!fs.existsSync(dirPath)) {
         // no generated common directory yet
         return;
@@ -136,7 +116,7 @@ function removeFiles(type) {
         if (fs.existsSync(fileName) && !fs.existsSync(originalFile)) {
             fs.unlink(fileName, err => {
                 if (err) {
-                    log('Error', type, 'Could not remove' + fileName);
+                    log('Error', type, 'Could not remove ' + fileName);
                 } else {
                     log('Success', type, 'Removed ' + fileName);
                 }
@@ -158,7 +138,7 @@ if (manageReact) {
 
 // watch new changes in ./common
 watch(path.resolve(__dirname, './common/'), { recursive: true }, function(event, fileName) {
-    if (fileName.slice(-4) == '.swp') {
+    if (fileName.slice(-4) === '.swp') {
         // temporary file
         return;
     }
