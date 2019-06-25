@@ -12,7 +12,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.ogame.gameforge.com/game/index.php?*"
+        "https://*.ogame.gameforge.com/game/index.php?*",
+        "https://lobby.ogame.gameforge.com/*"
       ],
       "js": [
         "common/third-parties/jquery.min.js",
@@ -32,6 +33,7 @@
     "default_title": "Zerogame"
   },
   "permissions": [
-    "https://*.ogame.gameforge.com/game/index.php?*"
+    "https://*.ogame.gameforge.com/game/index.php?*",
+    "https://lobby.ogame.gameforge.com/*"
   ]
 }

@@ -14,3 +14,5 @@ react/web-build/
 react/web-report/
 
 \.vscode/
+
+react/assets/scripts/generated/
