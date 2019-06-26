@@ -61,6 +61,13 @@
       "css": ["common/styles/shipyard.css"],
       "run_at": "document_start",
       "all_frames": false
+    },
+    {
+      "matches": ["https://*.ogame.gameforge.com/game/index.php?page=defense*"],
+      "js": ["common/scripts/defense.js"],
+      "css": ["common/styles/defense.css"],
+      "run_at": "document_start",
+      "all_frames": false
     }
   ],
   "browser_action": {
