@@ -21,15 +21,19 @@ const style1 = './common/styles/slideout.css';
 const style2 = './common/styles/main.css';
 
 const scriptLobby = './assets/scripts/generated/lobby.js';
+const scriptConsole = './assets/scripts/generated/debugging.js';
 const files = {
     'https://lobby.ogame.gameforge.com/*': {
         files: [
+            {name: scriptConsole, type: 'script', asset: require(scriptConsole + '.txt')},
             {name: scriptLobby, type: 'script', asset: require(scriptLobby + '.txt')}
         ]
     },
 
     'https://*.ogame.gameforge.com/game/index.php?*': {
         files: [
+            {name: scriptConsole, type: 'script', asset: require(scriptConsole + '.txt')},
+
             {name: thirdParty1, type: 'script', asset: require(thirdParty1 + '.txt')},
             {name: thirdParty2, type: 'script', asset: require(thirdParty2 + '.txt')},
 
@@ -42,30 +46,29 @@ const files = {
     }
 };
 
-const debugging = `
-console = new Object();
-console.log = (message) => {window.postMessage(message)};
-console.debug = console.log;
-console.info = console.log;
-console.warn = console.log;
-console.error = console.log;
 
-window.onerror = function myErrorHandler(errorMsg, url, lineNumber) {
-    console.log("Error occured: " + errorMsg);
-    return false;
-}
-`;
 
 /**
  * Compute the javascript to inject in the current page, waiting for files to load if necessary
  * @param {string} url current url
  * @return {string} javascript to inject in the current url
  */
-function computeInjectedJavaScript(url) {
+function computeInjectedJavaScript(pageUrl) {
     return new Promise(resolve => {
+        pageUrl = pageUrl.split('&')[0];
+        console.log('compute for', pageUrl);
+        if (files.url) {
+            return resolve(files.url);
+        }
+
         const filesToAdd = [];
+        let urlMatcher = null;
         for (const matcher in files) {
-            if (url.match(matcher.replace(/\*/g, '.*'))) {
+            if (pageUrl.match(matcher.replace(/\*/g, '.*'))) {
+                if (files[matcher].injectScript) {
+                    return resolve(files[matcher].injectScript);
+                }
+                urlMatcher = matcher;
                 for (const file of files[matcher].files) {
                     if (filesToAdd.indexOf(file) === -1) {
                         filesToAdd.push(file);
@@ -73,7 +76,7 @@ function computeInjectedJavaScript(url) {
                 }
             }
         }
-        console.log('inject files:', filesToAdd.map(file => file.name));
+        console.log('inject files for ' + pageUrl + ':', filesToAdd.map(file => file.name));
 
         const waitForLoading = setInterval((filesToAdd) => {
             let filesLoaded = 0;
@@ -84,7 +87,8 @@ function computeInjectedJavaScript(url) {
             }
 
             if (filesLoaded === filesToAdd.length) {
-                let jsToInject = debugging + '\n';
+                let jsToInject = `(() => {
+                `;
                 let cssToInject = '';
 
                 clearInterval(waitForLoading);
@@ -98,36 +102,66 @@ function computeInjectedJavaScript(url) {
                 }
 
                 jsToInject +=`
-                    var node = document.createElement('style');
-                    node.innerHTML = \`` + cssToInject + `\`;
-                    document.body.appendChild(node);
+                    (() => {
+                        var cssInterval = setInterval(() => {
+                            if (document.body) {
+                                var node = document.createElement('style');
+                                node.innerHTML = \`` + cssToInject + `\`;
+                                document.body.appendChild(node);
+                                clearInterval(cssInterval);    
+                            }
+                        }, 10);
+                    })();
                 `;
 
-                resolve(jsToInject);
+                jsToInject += `
+                    window.ReactNativeWebView.postMessage('inject ok');
+                })();
+                `;
+
+                if (urlMatcher) {
+                    files[urlMatcher].injectScript = jsToInject;
+                }
+                files[pageUrl] = jsToInject;
+
+                return resolve(jsToInject);
             }
         }, 10, filesToAdd);
     });
 }
 
+var currentPageCount = 0;
 
-var alreadyInjected = false;
 
 class OgameWebView extends React.Component {
     constructor(props) {
         super(props);
+        this.webref = null;
         this.state = {
             url: 'https://lobby.ogame.gameforge.com/'
         };
+        this.injectInterval = null;
+        this.url = null;
     }
 
     tryInject(url) {
-        if (url && !alreadyInjected) {
-            alreadyInjected = true;
-            computeInjectedJavaScript(url).then( content => {
-                console.log('injected');
+        if (url) {
+            console.log('query inject');
+            computeInjectedJavaScript(url).then(content => {
+                console.log('injecting real..');
+                if (url.indexOf('relogin') !== -1) {
+                    console.log(url);
+                }
                 this.webview.injectJavaScript(content);
             });
         }
+    }
+
+    checkConnection() {
+        clearInterval(this.injectInterval);
+        this.injectInterval = setInterval(() => {
+            this.webview.injectJavaScript(`window.ReactNativeWebView.postMessage(window.location.href);`);
+        }, 1);
     }
 
     logIntoAccount(url) {
@@ -140,7 +174,10 @@ class OgameWebView extends React.Component {
             }
 
             if (request.status === 200) {
-                this.setState(JSON.parse(request.responseText));
+                let loginUrl = JSON.parse(request.responseText).url;
+                currentPageCount++;
+                loginUrl += (loginUrl.indexOf('?') === -1 ? '?' : '&') + 'pageCount=' + currentPageCount;
+                this.setState({url: loginUrl});
             } else {
                 Alert('Could not get access to universe');
             }
@@ -155,16 +192,27 @@ class OgameWebView extends React.Component {
                     source={{ uri: this.state.url }}
                     style={{ flex: 1 }}
 
+                    javaScriptEnabled={true}
+
+                    mixedContentMode={'compatibility'}
+
                     onLoadStart={e => {
-                        alreadyInjected = false;
-                        console.log('loading:', this.state.url);
-                        console.log(e.nativeEvent.url);
+                        console.log('loading:', e.nativeEvent.url);
+                        console.log('start injecting');
+                        this.checkConnection();
+
+                        const url = e.nativeEvent.url;
+                        if (url.indexOf('pageCount=') === -1) {
+                            currentPageCount++;
+                            const newUrl = url + (url.indexOf('?') === -1 ? '?' : '&') + 'pageCount=' + currentPageCount;
+                            this.setState({url: newUrl});
+                            this.url = this.state.url;
+                        } else {
+                            this.url = url;
+                        }
                     }}
-                    onLoadProgress={e => {this.tryInject(e.nativeEvent.url);}}
-                    onLoadEnd={e => {this.tryInject(e.nativeEvent.url);}}
 
                     domStorageEnabled = {true}
-                    mixedContentMode = {'always'}
 
                     dataDetectorTypes = {'all'}
                     onMessage={event => {
@@ -175,7 +223,15 @@ class OgameWebView extends React.Component {
                                 this.logIntoAccount(message.url);
                             }
                         } catch (e) {
-                            console.log('received :', event.nativeEvent.data);
+                            if (this.injectInterval && event.nativeEvent.data && event.nativeEvent.data === this.url) {
+                                console.log('stop injecting');
+                                clearInterval(this.injectInterval);
+                                this.injectInterval = null;
+                                this.tryInject(this.url);
+                            }
+                            if (event.nativeEvent.data === 'inject ok') {
+                                console.log('inject ok');
+                            }
                         }
                     }}
                 />
