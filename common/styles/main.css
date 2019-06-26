@@ -8,6 +8,10 @@ body::-webkit-scrollbar {
     width: 0 !important;
 }
 
+#inhalt {
+    width: 100vw;
+}
+
 #oMobileWrapper {
     width: 100vw !important;
     position: absolute;

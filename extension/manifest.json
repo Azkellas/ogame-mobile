@@ -28,15 +28,16 @@
       "all_frames": false
     },
     {
-      "matches": [
-        "https://*.ogame.gameforge.com/game/index.php?page=overview*"
-      ],
-      "js": [
-        "common/scripts/overview.js"
-      ],
-      "css": [
-        "common/styles/overview.css"
-      ],
+      "matches": ["https://*.ogame.gameforge.com/game/index.php?page=overview*"],
+      "js": ["common/scripts/overview.js"],
+      "css": ["common/styles/overview.css"],
+      "run_at": "document_start",
+      "all_frames": false
+    },
+    {
+      "matches": ["https://*.ogame.gameforge.com/game/index.php?page=resources*"],
+      "js": ["common/scripts/resources.js"],
+      "css": ["common/styles/resources.css"],
       "run_at": "document_start",
       "all_frames": false
     }
