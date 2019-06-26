@@ -40,6 +40,13 @@
       "css": ["common/styles/resources.css"],
       "run_at": "document_start",
       "all_frames": false
+    },
+    {
+      "matches": ["https://*.ogame.gameforge.com/game/index.php?page=station*"],
+      "js": ["common/scripts/station.js"],
+      "css": ["common/styles/station.css"],
+      "run_at": "document_start",
+      "all_frames": false
     }
   ],
   "browser_action": {
