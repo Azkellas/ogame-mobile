@@ -1,6 +1,54 @@
 html, body {
-    margin: 0;
+    margin: 0 !important;
     height: 100%;
-    overflow: hidden;
-    background-color: #a00;
+    overflow: hidden !important;
 }
+
+#oMobileWrapper {
+    width: 100vw !important;
+    position: absolute;
+    background-color: #000;
+}
+
+#oMobileWrapper > #resources {
+    display: inline-flex;
+    padding: 5px;
+    text-align: -webkit-center;
+}
+
+#oMobileWrapper > #resources > li {
+    display: inline-flex;
+    flex-direction: column;
+    width: 20vw;
+}
+
+
+.smallplanet .planetPic {
+    left: 100px !important;
+    top: 8px !important;
+}
+
+.smallplanet .moonlink {
+    top: 5px !important;
+}
+
+.smallplanet .moonlink img {
+    margin-right: 25px !important;
+    margin-top: 10px !important;
+    margin-bottom: 15px !important;
+    width: 20px !important;
+    height: 20px !important;
+}
+
+.smallplanet .planet-name, .smallplanet .planet-koords {
+    left: 30px !important;
+    text-align: center !important;
+    font-size: 15px !important;
+}
+
+.smallplanet .moon_active {
+    color: #C90;
+    font-size: 11px;
+    font-weight: 700;
+}
+
