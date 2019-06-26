@@ -12,8 +12,7 @@
   "content_scripts": [
     {
       "matches": [
-        "https://*.ogame.gameforge.com/game/index.php?*",
-        "https://lobby.ogame.gameforge.com/*"
+        "https://*.ogame.gameforge.com/game/index.php?*"
       ],
       "js": [
         "common/third-parties/jquery.min.js",
@@ -27,10 +26,23 @@
       ],
       "run_at": "document_start",
       "all_frames": false
+    },
+    {
+      "matches": [
+        "https://*.ogame.gameforge.com/game/index.php?page=overview*"
+      ],
+      "js": [
+        "common/scripts/overview.js"
+      ],
+      "css": [
+        "common/styles/overview.css"
+      ],
+      "run_at": "document_start",
+      "all_frames": false
     }
   ],
   "browser_action": {
-    "default_title": "Zerogame"
+    "default_title": "Ogame Mobile"
   },
   "permissions": [
     "https://*.ogame.gameforge.com/game/index.php?*",

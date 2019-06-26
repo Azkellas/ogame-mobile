@@ -1,7 +1,11 @@
 html, body {
     margin: 0 !important;
     height: 100%;
-    overflow: hidden !important;
+    overflow-x: hidden !important;
+}
+
+body::-webkit-scrollbar {
+    width: 0 !important;
 }
 
 #oMobileWrapper {
@@ -52,3 +56,65 @@ html, body {
     font-weight: 700;
 }
 
+
+#info, #siteFooter, #mmonetbar {
+    display: none !important;
+}
+
+#toolbarcomponent {
+    /* note: toolbar is the menu and is made visible later sidemenus are ready */
+    display: none;
+}
+
+#contentWrapper {
+    padding: 0px !important;
+}
+
+
+.comm_menu.messages {
+    left: -10px;
+}
+
+.comm_menu.chat {
+    left: -20px;
+}
+
+#messages_collapsed {
+    left: -35px;
+    position: relative;
+}
+
+.next_event {
+    width: auto !important;
+    margin-right: 20px;
+}
+
+.eventFleet td {
+    font-size: 9px;
+}
+
+td.arrivalTime {
+    /* we cannot display all informations for events, this might be the least worst to hide */
+    display: none;
+}
+
+#eventContent {
+    display: flex;
+}
+
+#eventContent td {
+    padding: 2px;
+    font-size: 10px;
+}
+
+#eventFooter {
+    display: none;
+}
+
+#eventHeader {
+    width: 100vw;
+}
+
+#eventHeader .eventToggle {
+    margin-right: 5px !important;
+}

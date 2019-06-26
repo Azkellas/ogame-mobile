@@ -9,39 +9,14 @@
         }
     });
 
-    var hideFooter = setInterval(() => {
-        if ($('#siteFooter').length) {
-            $('#siteFooter').css('display', 'none');
-            clearInterval(hideFooter);
+    var eventBoxLoader = setInterval(() => {
+        if ($('#eventboxLoading').length && $('#eventboxLoading').css('display') !== 'flex') {
+            if ($('#eventboxLoading').css('display') !== 'none') {
+                $('#eventboxLoading').css('display', 'flex');
+            }
+            clearInterval(eventBoxLoader);
         }
     });
-
-    var hideTop = setInterval(() => {
-        if ($('#info').length) {
-            $('#info').css('display', 'none');
-            clearInterval(hideTop);
-        }
-    });
-
-    var hideMenu = setInterval(() => {
-        if ($('#toolbarcomponent').length) {
-            $('#toolbarcomponent').css('display', 'none');
-            clearInterval(hideMenu);
-        }
-    });
-
-    var timeSpent = 0;
-    var appendMenuButton = setInterval(() => {
-        if ($('#mmoContent').length && $('#mmonetbar').length && ($('#mmoContent').css('display') === 'block' || $('#mmonetbar').css('display') === 'block')) {
-            $('#mmonetbar').css('display', 'none');
-            $('#mmoContent').css('display', 'none');
-            timeSpent += 10;
-            console.log('hide;');
-        }
-        if (timeSpent > 1000) {
-            clearInterval(appendMenuButton);
-        }
-    }, 10);
 
     var moveMoons = setInterval(() => {
         if ($('.smallplanet .moonlink').length) {

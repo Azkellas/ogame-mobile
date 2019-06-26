@@ -35,7 +35,8 @@
             $('#oMobileWrapper').append($('#contentWrapper'));
 
             $('#links').css('overflow', 'hidden');
-            $('#toolbarcomponent').css('display', '');
+            $('#toolbarcomponent').css('display', 'block');
+            console.log('made toolbar visible: ', $('#toolbarcomponent').css('display'));
             var leftSlideout = new Slideout({
                 'panel': document.getElementById('oMobileWrapper'),
                 'menu': document.getElementById('links'),

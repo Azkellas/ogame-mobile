@@ -1,0 +1,40 @@
+#planetdata {
+    margin: 0px !important;
+    float: initial !important;
+    width: 100vw !important;
+}
+
+#detailWrapper {
+    height: auto !important;
+}
+
+#planet {
+    display: none !important;
+}
+
+#header_text h2 a:link {
+    color: #eee;
+    text-decoration: none;
+    font: bold 18px/22px Verdana,Arial,Helvetica,sans-serif;
+    white-space: nowrap;
+
+    flex-direction: row;
+    display: flex;
+
+    justify-content: center;
+    width: 100vw;
+}
+
+h2 a img {
+    opacity: 0.5;
+}
+
+
+.content-box-s {
+    width: 33vw !important;
+}
+
+.content-box-s h3 {
+    width: inherit !important;
+}
+
