@@ -1,0 +1,106 @@
+#planet {
+    width: 100vw !important;
+}
+
+#civilships, #battleships {
+    width: 100vw !important;
+    height: auto !important;
+
+    margin: auto !important;
+    /* background: transparent url(https://gf3.geo.gfsrv.net/cdn8f/62eceae400fa8116762698d86f12c9.gif) no-repeat !important; */
+}
+
+#civil, #military {
+    margin: auto !important;
+    width: 100vw !important;
+
+}
+
+.production_info {
+    height: auto !important;
+}
+
+#civilships li, #battleships li {
+    margin-left: 3px !important;
+    margin-right: 3px !important;
+    margin-bottom: 10px !important;
+}
+
+#civilships {
+    margin-top: 28px !important;
+}
+
+.content {
+    width: 100vw;
+    padding: 0px !important;
+}
+
+.content-box-s {
+    width: 100vw !important;
+}
+
+.content-box-s .header {
+    background-size: cover !important;
+    text-align: -webkit-center;
+}
+
+.content-box-s .header h3 {
+    padding-top: 15px !important;
+}
+
+.content-box-s .footer {
+    background-size: cover !important;
+}
+
+#buttonz .header {
+    width: 100vw;
+}
+
+
+#planet div#slot01.slot {
+    right: auto !important;
+}
+
+
+#content span.level {
+    position: absolute;
+    left: 221px;
+    top: 15px;
+}
+
+a.demolish_link {
+    position: absolute !important;
+    bottom: 10px !important;
+    top: auto !important;
+    left: -350px !important;
+}
+
+div.build-it_wrap, div.enter {
+    position: absolute !important;
+}
+
+div.build-it_wrap {
+    bottom: 50px;
+    left: 210px;
+}
+
+div.enter {
+    left: 100px;
+    bottom: 42px;
+    top: auto !important;
+}
+
+#close {
+    position: absolute;
+    left: 7px;
+    bottom: 50px;
+}
+
+.h_civilships {
+    top: 180px;
+    z-index: 1;
+    width: 100vw !important;
+    position: relative;
+    background-image: url(https://gf1.geo.gfsrv.net/cdn63/10e31cd5234445e4084558ea3506ea.gif);
+    background-repeat: no-repeat;
+}
