@@ -47,6 +47,13 @@
       "css": ["common/styles/station.css"],
       "run_at": "document_start",
       "all_frames": false
+    },
+    {
+      "matches": ["https://*.ogame.gameforge.com/game/index.php?page=research*"],
+      "js": ["common/scripts/research.js"],
+      "css": ["common/styles/research.css"],
+      "run_at": "document_start",
+      "all_frames": false
     }
   ],
   "browser_action": {
