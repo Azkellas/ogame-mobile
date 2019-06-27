@@ -1,0 +1,33 @@
+#galaxytable {
+    width: 100vw !important;
+    table-layout: fixed;
+    width: 10px;
+}
+
+#galaxytable tr {
+    width: 100vw !important;
+    display: flex;
+}
+
+
+#galaxytable td.microplanet {
+    width: 10vw !important;
+}
+
+#galaxytable td.planetname {
+    display: none;
+}
+
+#galaxytable td.moon {
+    /* left: 7vw; */
+    margin-left: 1vw;
+    width: 10vw !important;
+}
+
+#galaxytable td.debris {
+    width: 10vw !important;
+}
+
+#galaxytable tr:nth-child(2) th:nth-child(2) {
+    display: none !important;
+}

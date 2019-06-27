@@ -68,6 +68,13 @@
       "css": ["common/styles/defense.css"],
       "run_at": "document_start",
       "all_frames": false
+    },
+    {
+      "matches": ["https://*.ogame.gameforge.com/game/index.php?page=galaxy*"],
+      "js": ["common/scripts/galaxy.js"],
+      "css": ["common/styles/galaxy.css"],
+      "run_at": "document_start",
+      "all_frames": false
     }
   ],
   "browser_action": {
