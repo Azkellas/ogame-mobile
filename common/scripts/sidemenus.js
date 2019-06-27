@@ -63,8 +63,8 @@
             const nPlanets = parseInt($('#countColonies').text().split('/')[0]);
             if (nPlanets) {
                 clearInterval(adaptPlanetSize);
-                console.log('found ' + nPlanets + ' planets ' + 100/nPlanets + 'vh');
-                $('#planetList .smallplanet').css('height', Math.floor(100/nPlanets) + 'vh');
+                console.log('found ' + nPlanets + ' planets ' + 98/nPlanets + 'vh');
+                $('#planetList .smallplanet').css('height', Math.floor(98/nPlanets) + 'vh');
             }
         }
     }, 10);

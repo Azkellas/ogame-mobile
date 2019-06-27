@@ -31,6 +31,10 @@ body::-webkit-scrollbar {
 }
 
 
+#planetList .smallplanet {
+    margin: 0px !important;
+}
+
 .smallplanet .planetPic {
     left: 100px !important;
     top: 8px !important;
@@ -65,8 +69,8 @@ body::-webkit-scrollbar {
     display: none !important;
 }
 
-#eventboxContent {
-    margin-bottom: 20px !important;
+#oMobileWrapper {
+    margin-bottom: 17px !important;
 }
 
 #toolbarcomponent {
@@ -125,4 +129,17 @@ td.arrivalTime {
 
 #eventHeader .eventToggle {
     margin-right: 5px !important;
+}
+
+.pusher {
+    margin-top: 0px !important;
+}
+
+.slideIn {
+    top: 0px;
+}
+
+table.construction.active td.first > div {
+    width: 45px;
+    right: -25px;
 }
