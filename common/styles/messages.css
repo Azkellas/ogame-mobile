@@ -1,0 +1,24 @@
+.content {
+    padding: 0px !important;
+    width: 100vw;
+}
+
+.header {
+    width: 100vw;
+    background-position: center;
+}
+
+.tabs_btn li {
+    width: 16vw;
+}
+
+.subtabs {
+    width: 100vw !important;
+    display: flex !important;
+}
+
+.subtabs li {
+    width: auto;
+    margin-left: 1px;
+    margin-right: 1px;
+}
