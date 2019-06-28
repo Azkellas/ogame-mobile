@@ -20,7 +20,8 @@ body::-webkit-scrollbar {
 
 #oMobileWrapper > #resources {
     display: inline-flex;
-    padding: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     text-align: -webkit-center;
 }
 
@@ -142,4 +143,16 @@ td.arrivalTime {
 table.construction.active td.first > div {
     width: 45px;
     right: -25px;
+}
+
+#bar li:nth-child(1) {
+    display: none;
+}
+
+#bar li:nth-child(2) {
+    display: none;
+}
+
+#bar li:nth-child(7) {
+    display: none;
 }

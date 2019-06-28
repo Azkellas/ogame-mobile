@@ -11,18 +11,19 @@
     }, 10);
 
 
-    var moveResources = setInterval(() => {
-        if ($('#oMobileWrapper').length && $('ul#resources').length && $('#message-wrapper').length) {
+    var moveValuableInfos = setInterval(() => {
+        if ($('#oMobileWrapper').length && $('ul#resources').length && $('#message-wrapper').length && $('#bar').length) {
             $('#oMobileWrapper')
                 .prepend($('#message-wrapper'))
-                .prepend($('ul#resources'));
+                .prepend($('ul#resources'))
+                .prepend($('#bar'));
             $('#message-wrapper').css('position', 'initial');
             $('#message_collapsed').css('width', '50vw');
             $('#message_collapsed > event_list > event_list').css('display', 'flex');
             $('#attack_alert')
                 .css('right', '0px')
                 .css('position', 'absolute');
-            clearInterval(moveResources);
+            clearInterval(moveValuableInfos);
         }
     });
 
