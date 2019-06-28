@@ -1,0 +1,69 @@
+/* If no ship on planet */
+#warning, div.fleetStatus {
+    width: 100vw !important;
+    background-position-x: -20px;
+}
+
+#buttonz {
+    width: 100Vw;
+}
+
+#planet {
+    width: 100vw !important;
+}
+
+#civilships, #battleships {
+    width: 100vw !important;
+    height: auto !important;
+
+    margin: auto !important;
+    /* background: transparent url(https://gf3.geo.gfsrv.net/cdn8f/62eceae400fa8116762698d86f12c9.gif) no-repeat !important; */
+}
+
+#civil, #military {
+    margin: auto !important;
+    width: 100vw !important;
+
+}
+
+.production_info {
+    height: auto !important;
+}
+
+#civilships li, #battleships li {
+    margin-left: 3px !important;
+    margin-right: 3px !important;
+    margin-bottom: 10px !important;
+}
+
+#civilships {
+    margin-top: 28px !important;
+}
+
+#buttonz .header {
+    width: 100vw;
+}
+
+.content {
+    width: 100vw;
+    padding: 0px !important;
+}
+
+
+.h_civilships {
+    top: 230px;
+    z-index: 1;
+    width: 100vw !important;
+    position: relative;
+    background-image: url(https://gf1.geo.gfsrv.net/cdn63/10e31cd5234445e4084558ea3506ea.gif);
+    background-repeat: no-repeat;
+}
+
+#spacer {
+    /* space is the vertical margin between military and civil ships */
+    display: none;
+}
+
+div.allornonewrap {
+    width: 90vw !important;
+}

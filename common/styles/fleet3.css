@@ -1,0 +1,49 @@
+#buttonz .content {
+    width: 100vw !important;
+}
+
+#buttonz .header {
+    width: 98vw !important;
+}
+
+#missions {
+    width: 98vw !important;
+    height: auto;
+}
+
+#missions li {
+    margin-bottom: 20px !important;
+}
+
+#missionNameWrapper {
+    margin-top: 80px;
+}
+
+#fleetStatusBar {
+    width: 99vw;
+    display: inline-flex;
+}
+
+#fleetStatusBar .title {
+    display: none;
+}
+
+#fleetStatusBar .missionName {
+    font-weight: bolder;
+}
+
+#sendfleet .content {
+    width: 100vw !important;
+}
+
+#sendfleet .header {
+    width: 98vw !important;
+}
+
+#sendfleet .footer {
+    display: none;
+}
+
+#naviActions {
+    display: contents;
+}

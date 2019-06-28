@@ -1,0 +1,48 @@
+#start, #distance {
+    display: none;
+}
+
+#mission tr:nth-child(1) th:nth-child(1) {
+    display: none !important;
+}
+#mission tr:nth-child(1) th:nth-child(2) {
+    display: none !important;
+}
+
+#buttonz .content {
+    width: 100vw !important;
+}
+
+#buttonz .header, .briefing {
+    width: 95vw !important;
+}
+
+#mission {
+    width: auto !important;
+    margin-left: 10px !important;
+}
+
+#shortcuts {
+    position: absolute;
+    right: -35px;
+}
+
+#speedLinks {
+    font-size: 15px !important;
+}
+
+#fleetBriefingPart1 li, #fleetBriefingPart1_2 li {
+    font-size: 13px !important;
+}
+
+#fleetBriefingPart1, #fleetBriefingPart1_2 {
+    width: 85vw;
+}
+
+#fleetBriefingPart1_2 {
+    margin-left: 20px !important;
+}
+
+#steps {
+    display: inline-block;
+}

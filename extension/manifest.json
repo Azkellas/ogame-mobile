@@ -82,6 +82,27 @@
       "css": ["common/styles/messages.css"],
       "run_at": "document_start",
       "all_frames": false
+    },
+    {
+      "matches": ["https://*.ogame.gameforge.com/game/index.php?page=fleet1*"],
+      "js": ["common/scripts/fleet1.js"],
+      "css": ["common/styles/fleet1.css"],
+      "run_at": "document_start",
+      "all_frames": false
+    },
+    {
+      "matches": ["https://*.ogame.gameforge.com/game/index.php?page=fleet2*"],
+      "js": ["common/scripts/fleet2.js"],
+      "css": ["common/styles/fleet2.css"],
+      "run_at": "document_start",
+      "all_frames": false
+    },
+    {
+      "matches": ["https://*.ogame.gameforge.com/game/index.php?page=fleet3*"],
+      "js": ["common/scripts/fleet3.js"],
+      "css": ["common/styles/fleet3.css"],
+      "run_at": "document_start",
+      "all_frames": false
     }
   ],
   "browser_action": {
