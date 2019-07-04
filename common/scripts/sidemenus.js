@@ -12,9 +12,10 @@
 
 
     var moveValuableInfos = setInterval(() => {
-        if ($('#oMobileWrapper').length && $('ul#resources').length && $('#message-wrapper').length && $('#bar').length) {
+        if ($('#oMobileWrapper').length && $('ul#resources').length && $('#message-wrapper').length && $('#bar').length && $('#officers').length) {
             $('#oMobileWrapper')
                 .prepend($('#message-wrapper'))
+                .prepend($('#officers'))
                 .prepend($('ul#resources'))
                 .prepend($('#bar'));
             $('#message-wrapper').css('position', 'initial');
@@ -64,8 +65,8 @@
             const nPlanets = parseInt($('#countColonies').text().split('/')[0]);
             if (nPlanets) {
                 clearInterval(adaptPlanetSize);
-                console.log('found ' + nPlanets + ' planets ' + 98/nPlanets + 'vh');
-                $('#planetList .smallplanet').css('height', Math.floor(98/nPlanets) + 'vh');
+                console.log('found ' + nPlanets + ' planets ' + 90/nPlanets + 'vh');
+                $('#planetList .smallplanet').css('height', Math.floor(90/nPlanets) + 'vh');
             }
         }
     }, 10);

@@ -31,6 +31,13 @@ body::-webkit-scrollbar {
     width: 20vw;
 }
 
+#officers {
+    position: relative !important;
+    left: 0px !important;
+    top: 0px !important;
+    width: 100vw;
+    text-align: center !important;
+}
 
 #planetList .smallplanet {
     margin: 0px !important;
@@ -111,8 +118,24 @@ td.arrivalTime {
     display: none;
 }
 
+td.coordsOrigin {
+    /* TODO: this should only be the case when the planet is owned / known
+              ie, either display coordinates or planet name */
+    display: none;
+}
+
+td.destCoords {
+    /* TODO: this should only be the case when the planet is owned / known
+              ie, either display coordinates or planet name */
+    display: none;
+}
+
+td.sendProbe, td.sendMail {
+    display: none;
+}
+
 #eventContent {
-    display: flex;
+    width: 100vw !important;
 }
 
 #eventContent td {
@@ -143,6 +166,10 @@ td.arrivalTime {
 table.construction.active td.first > div {
     width: 45px;
     right: -25px;
+}
+
+#bar {
+    margin-top: 5px;
 }
 
 #bar li:nth-child(1) {
