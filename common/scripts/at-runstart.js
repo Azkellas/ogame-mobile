@@ -60,4 +60,23 @@
             clearInterval(moveMoons);
         }
     }, 10);
+
+    var addOptionLi = setInterval(() => {
+        if ($('ul#menuTable').length && $('#bar li a').length > 5) {
+            const oldButton = $('#bar li a').eq(5);
+            $('ul#menuTable').append(`
+                <li>
+                    <span class="menu_icon">
+                        <div class="menuImage shipyard"></div>
+                    </span>
+                    <a id="OM_options" class="menubutton" href="` + oldButton.attr('href') + `" accesskey="" target="_self">
+                        <span class="textlabel">
+                            ` + oldButton.text() + `
+                        </span>
+                    </a>
+                </li>
+            `);
+            clearInterval(addOptionLi);
+        }
+    });
 })(jQuery);

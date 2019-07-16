@@ -1,0 +1,15 @@
+ul#tabs-pref {
+    width: 100vw !important;
+}
+
+form#prefs {
+    width: 100vw !important;
+}
+
+.fieldwrapper {
+    width: 100vw !important;
+}
+
+.fieldwrapper label {
+    width: auto !important;
+}

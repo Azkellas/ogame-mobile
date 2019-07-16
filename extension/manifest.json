@@ -103,6 +103,13 @@
       "css": ["common/styles/fleet3.css"],
       "run_at": "document_start",
       "all_frames": false
+    },
+    {
+      "matches": ["https://*.ogame.gameforge.com/game/index.php?page=preferences*"],
+      "js": ["common/scripts/preferences.js"],
+      "css": ["common/styles/preferences.css"],
+      "run_at": "document_start",
+      "all_frames": false
     }
   ],
   "browser_action": {
