@@ -12,7 +12,28 @@
     width: 16vw;
 }
 
-.subtabs {
+ul.subtabs {
+    width: 100vw !important;
+    background-image: none !important;
+    display: grid !important;
+}
+
+ul.subtabs li {
+    background-image: url("//gf3.geo.gfsrv.net/cdne1/d03835718066a5a592a6426736e019.png") !important;
+    background-position: inherit;
+    opacity: 0.8;
+}
+
+li.trash_tab, .trash_box {
+    position: inherit !important;
+    display: inline;
+}
+
+.footer {
+    display: none !important;
+}
+
+/* .subtabs {
     width: 100vw !important;
     display: flex !important;
 }
@@ -21,4 +42,4 @@
     width: auto;
     margin-left: 1px;
     margin-right: 1px;
-}
+} */

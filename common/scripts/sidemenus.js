@@ -66,7 +66,7 @@
             if (nPlanets) {
                 clearInterval(adaptPlanetSize);
                 console.log('found ' + nPlanets + ' planets ' + 90/nPlanets + 'vh');
-                $('#planetList .smallplanet').css('height', Math.floor(90/nPlanets) + 'vh');
+                $('#planetList .smallplanet').css('height', 90/nPlanets + 'vh');
             }
         }
     }, 10);
