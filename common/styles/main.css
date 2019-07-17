@@ -151,6 +151,10 @@ td.sendProbe, td.sendMail {
     width: 100vw;
 }
 
+#eventboxLoading, #eventboxBlank {
+    width: calc(100vw - 120px);
+}
+
 #eventHeader .eventToggle {
     margin-right: 5px !important;
 }

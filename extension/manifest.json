@@ -110,6 +110,13 @@
       "css": ["common/styles/preferences.css"],
       "run_at": "document_start",
       "all_frames": false
+    },
+    {
+      "matches": ["https://*.ogame.gameforge.com/game/index.php?page=highscore*"],
+      "js": ["common/scripts/highscore.js"],
+      "css": ["common/styles/highscore.css"],
+      "run_at": "document_start",
+      "all_frames": false
     }
   ],
   "browser_action": {

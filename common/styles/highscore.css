@@ -1,0 +1,61 @@
+#inhalt .content {
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+#stat_list_content {
+    border: 0px !important;
+}
+
+.pagebar, .header {
+    width: 100vw !important;
+}
+
+#ranks {
+    width: 100vw !important;
+    /* table-layout: inherit !important; */
+}
+
+#row {
+    width: 100vw;
+    height: auto !important;
+    padding-bottom: 20px !important;
+}
+
+.buttons.rightCol {
+    padding-top: 18px !important;
+    width: 100vw !important;
+    height: auto !important;
+}
+
+#subnav_fleet {
+    padding-top: 14px !important;
+}
+
+td.position {
+    /* Allow rank 1 to 9999 */
+    width: 14px !important;
+}
+
+td.movement {
+    /* Allow -99 to +99 rank change */
+    width: 25px !important;
+}
+
+td.sendmsg {
+    width: 35px !important;
+}
+
+td.sendmsg a {
+    margin: 0px !important;
+}
+
+td.score {
+    /* Allow at least 999.999.999 */
+    width: 80px !important;
+}
+
+td.name {
+    /* width: auto !important; */
+    width: calc(100vw - 220px) !important;
+}

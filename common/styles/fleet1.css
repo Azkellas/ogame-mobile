@@ -50,8 +50,8 @@
 }
 
 
-.h_civilships {
-    top: 230px;
+.header h2 span {
+    /* top: 230px; */
     z-index: 1;
     width: 100vw !important;
     position: relative;
