@@ -167,11 +167,6 @@ td.sendProbe, td.sendMail {
     top: 0px;
 }
 
-table.construction.active td.first > div {
-    width: 45px;
-    right: -25px;
-}
-
 #bar {
     margin-top: 5px;
 }
@@ -181,6 +176,10 @@ table.construction.active td.first > div {
 }
 
 #bar li:nth-child(2) {
+    display: none;
+}
+
+#bar li:nth-child(6) {
     display: none;
 }
 

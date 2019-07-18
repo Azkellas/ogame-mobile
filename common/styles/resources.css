@@ -65,6 +65,7 @@ a.demolish_link {
 
 div.build-it_wrap, div.enter {
     position: absolute !important;
+    left: calc(100vw - 143px);
 }
 
 div.build-it_wrap {
