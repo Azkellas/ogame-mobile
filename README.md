@@ -10,7 +10,7 @@ Ogame Mobile is not yet available on any market (chrome/firefox/...) as it is st
 
 Disable the mobile version in `options > display` before installing the extension. Ogame Mobile is made to execute on the basic ogame view, not the mobile.
 
-Then download the latest beta version here: (releases)[https://github.com/Azkellas/ogame-mobile/releases]. (if you want the current dev version, download (extension.zip)[extension.zip] instead)
+Then download the latest beta version here: [releases](https://github.com/Azkellas/ogame-mobile/releases/latest). (if you want the current dev version, download [extension.zip](extension.zip) instead)
 
 ### Android
 
