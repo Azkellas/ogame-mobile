@@ -31,6 +31,11 @@ body::-webkit-scrollbar {
     width: 20vw;
 }
 
+#oMobileWrapper > #resources > li .resourceIcon {
+    margin: auto !important;
+}
+
+
 #officers {
     position: relative !important;
     left: 0px !important;

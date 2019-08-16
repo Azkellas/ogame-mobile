@@ -62,10 +62,8 @@ a.demolish_link {
 
 div.build-it_wrap {
     position: absolute !important;
-}
-
-div.build-it_wrap {
     bottom: 10px;
+    left: calc(100vw - 143px);
 }
 
 #close {

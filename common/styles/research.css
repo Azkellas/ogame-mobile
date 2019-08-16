@@ -69,13 +69,10 @@ a.demolish_link {
     left: -350px !important;
 }
 
-div.build-it_wrap, div.enter {
-    position: absolute !important;
-}
-
 div.build-it_wrap {
+    position: absolute !important;
     bottom: 50px;
-    left: 210px;
+    left: calc(100vw - 143px);
 }
 
 div.enter {
