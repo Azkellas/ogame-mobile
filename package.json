@@ -1,9 +1,9 @@
 {
   "name": "ogame-mobile",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "",
   "scripts": {
-    "start": "npm run dev:extension",
+    "start": "$npm_execpath run dev:extension",
     "dev": "node watcher.js both",
     "dev:extension": "node watcher.js extension",
     "dev:react": "(node watcher.js react & npm run expo --prefix ./react)"
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "eslint": "^6.0.1",
-    "eslint-plugin-react": "^7.14.2"
+    "eslint-plugin-react": "^7.14.2",
+    "web-ext": "^3.1.1"
   }
 }
