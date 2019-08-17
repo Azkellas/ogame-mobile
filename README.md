@@ -1,6 +1,6 @@
 # Ogame Mobile
 
-Ogame Mobile is a project to provide a user friendly way to play Ogame on smartphones. It can be bundled as a browser app (for firefox mobile or chromium based browsers like Kiwi) and as a native app, via Expo. The latter is not authorized by GameForge, but they rejected it after the birth of the project.
+Ogame Mobile is a project to provide a user friendly way to play Ogame on smartphones. It can be bundled as a browser extension (for firefox mobile or chromium based browsers like Kiwi) and as a native app, via Expo. The latter is not authorized by GameForge, but they rejected it after the birth of the project.
 
 ## Downloading
 
@@ -10,11 +10,15 @@ Ogame Mobile is not yet available on any market (chrome/firefox/...) as it is st
 
 Disable the mobile version in `options > display` before installing the extension. Ogame Mobile is made to execute on the basic ogame view, not the mobile.
 
-Then download the latest beta version here: [releases](https://github.com/Azkellas/ogame-mobile/releases/latest). (if you want the current dev version, download [extension.zip](extension.zip) instead)
+Then download the latest beta version here: [releases](https://github.com/Azkellas/ogame-mobile/releases/latest). (if you want the current dev version, download [extension.xpi](https://github.com/Azkellas/ogame-mobile/raw/master/extension.xpi) instead)
 
 ### Android
 
-Firefox for Android does not allow unsigned extensions. As of now, only Kiwi browser supports Ogame Mobile (at least that I know of). Go to the Extensions page (either via the menu or the url `chrome://extensions`). Click on `Load`, then navigate to your Downloads folder to add the `.xpi` extension previously downloaded. The file is no longer mandatory.
+**Firefox**: Go to `file://mnt/sdcard` then find your `Downloads` folder. Click on the `extension.xpi` file previously downloaded and accepts the pop-up. You have to grant firefox access to your storage to do so.
+
+**Kiwi**: Go to the Extensions page (either via the menu or the url `chrome://extensions`). Click on `Load`, then navigate to your Downloads folder to add the `.xpi` extension previously downloaded.
+
+The file is no longer mandatory.
 
 ### iOS
 
