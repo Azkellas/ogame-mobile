@@ -14,7 +14,7 @@ Then download the latest beta version here: [releases](https://github.com/Azkell
 
 ### Android
 
-**Firefox**: Go to `file://mnt/sdcard` then find your `Downloads` folder. Click on the `extension.xpi` file previously downloaded and accepts the pop-up. You have to grant firefox access to your storage to do so.
+**Firefox**: Go to `file:///mnt/sdcard` then find your `Downloads` folder. Click on the `extension.xpi` file previously downloaded and accepts the pop-up. You have to grant firefox access to your storage to do so.
 
 **Kiwi**: Go to the Extensions page (either via the menu or the url `chrome://extensions`). Click on `Load`, then navigate to your Downloads folder to add the `.xpi` extension previously downloaded.
 

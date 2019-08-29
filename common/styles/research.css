@@ -16,7 +16,7 @@
     height: auto !important;
 
     margin: auto !important;
-    background: transparent url(https://gf3.geo.gfsrv.net/cdn8f/62eceae400fa8116762698d86f12c9.gif) no-repeat !important;
+    background: transparent url("https://gf3.geo.gfsrv.net/cdn8f/62eceae400fa8116762698d86f12c9.gif") no-repeat !important;
 }
 
 #buttonz #wrapBattle li {

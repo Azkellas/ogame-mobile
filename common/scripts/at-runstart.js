@@ -79,4 +79,18 @@
             clearInterval(addOptionLi);
         }
     });
+
+    var hideOfficers = setInterval(() => {
+        if ($('#officers').length && $('#darkmatter_box img').length) {
+            const officers = $('#officers').first();
+            $('#darkmatter_box img').click(event => {
+                const newDisplay = officers.css('display') === 'none' ? 'inherit' : 'none';
+                officers.css('display', newDisplay);
+                event.preventDefault();
+                event.stopPropagation();
+            });
+            officers.css('display', 'none');
+            clearInterval(hideOfficers);
+        }
+    });
 })(jQuery);

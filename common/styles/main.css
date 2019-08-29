@@ -4,7 +4,7 @@ html, body {
     overflow-x: hidden !important;
 }
 
-body::-webkit-scrollbar {
+body::scrollbar {
     width: 0 !important;
 }
 
@@ -22,19 +22,18 @@ body::-webkit-scrollbar {
     display: inline-flex;
     padding-top: 5px;
     padding-bottom: 5px;
-    text-align: -webkit-center;
+    text-align: center;
 }
 
-#oMobileWrapper > #resources > li {
+#oMobileWrapper > #resources > li, #oMobileWrapper > #resources  #darkmatter_box > a {
     display: inline-flex;
     flex-direction: column;
     width: 20vw;
 }
 
-#oMobileWrapper > #resources > li .resourceIcon {
+#oMobileWrapper > #resources > li .resourceIcon, #oMobileWrapper > #resources #darkmatter_box img {
     margin: auto !important;
 }
-
 
 #officers {
     position: relative !important;

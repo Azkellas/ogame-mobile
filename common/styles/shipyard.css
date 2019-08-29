@@ -101,6 +101,6 @@ div.enter {
     z-index: 1;
     width: 100vw !important;
     position: relative;
-    background-image: url(https://gf1.geo.gfsrv.net/cdn63/10e31cd5234445e4084558ea3506ea.gif);
+    background-image: url("https://gf1.geo.gfsrv.net/cdn63/10e31cd5234445e4084558ea3506ea.gif");
     background-repeat: no-repeat;
 }

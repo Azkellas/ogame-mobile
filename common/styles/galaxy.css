@@ -1,7 +1,9 @@
 #galaxytable {
     width: 100vw !important;
     table-layout: fixed;
-    width: 10px;
+    height: 520px !important;
+    min-height: 520px !important;
+    display: block;
 }
 
 #galaxytable tr {
@@ -9,6 +11,9 @@
     display: flex;
 }
 
+#galaxytable tfoot {
+    display: none;
+}
 
 #galaxytable td.microplanet {
     width: 10vw !important;
