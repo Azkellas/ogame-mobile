@@ -175,6 +175,15 @@ td.sendProbe, td.sendMail {
 
 #bar {
     margin-top: 5px;
+    font-size: 14px !important;
+}
+
+#bar ul {
+    display: flex;
+}
+
+#bar ul li {
+    margin: auto !important;
 }
 
 #bar li:nth-child(1) {
@@ -185,10 +194,30 @@ td.sendProbe, td.sendMail {
     display: none;
 }
 
+#bar li:nth-child(4) {
+    display: none;
+}
+
 #bar li:nth-child(6) {
     display: none;
 }
 
 #bar li:nth-child(7) {
     display: none;
+}
+
+
+.ui-dialog, .ui-widget, .ui-widget-content, .ui-corner-all, .ui-front, .ui-draggable {
+    left: 0px !important;
+    right: 0px !important;
+    width: 100vw !important;
+    padding: 0px !important;
+}
+
+form#searchForm {
+    width: 100vw !important;
+}
+
+#message #inhalt .contentz {
+    width: 100vw !important;
 }

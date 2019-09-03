@@ -61,22 +61,36 @@
         }
     }, 10);
 
-    var addOptionLi = setInterval(() => {
+
+
+    /**
+     * Move bar button to left menu
+     * @param {JQuery element} button from the bar li (Friends/Highscore/Options)
+     */
+    function addLi(button) {
+        $('ul#menuTable').append(`
+        <li>
+            <span class="menu_icon">
+                <div class="menuImage shipyard"></div>
+            </span>
+            <a id="OM_options" class="menubutton" href="` + button.attr('href') + `" accesskey="" target="_self">
+                <span class="textlabel">
+                    ` + button.text() + `
+                </span>
+            </a>
+        </li>`);
+    }
+
+    var addLis = setInterval(() => {
         if ($('ul#menuTable').length && $('#bar li a').length > 5) {
-            const oldButton = $('#bar li a').eq(5);
-            $('ul#menuTable').append(`
-                <li>
-                    <span class="menu_icon">
-                        <div class="menuImage shipyard"></div>
-                    </span>
-                    <a id="OM_options" class="menubutton" href="` + oldButton.attr('href') + `" accesskey="" target="_self">
-                        <span class="textlabel">
-                            ` + oldButton.text() + `
-                        </span>
-                    </a>
-                </li>
-            `);
-            clearInterval(addOptionLi);
+            const optionButton = $('#bar li a').eq(5);
+            const highscoreButton = $('#bar li a').eq(1);
+            const friendsButton = $('#bar li a').eq(3);
+
+            addLi(optionButton);
+            addLi(highscoreButton);
+            addLi(friendsButton);
+            clearInterval(addLis);
         }
     });
 
