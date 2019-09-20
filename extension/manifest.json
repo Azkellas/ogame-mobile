@@ -117,6 +117,20 @@
       "css": ["common/styles/highscore.css"],
       "run_at": "document_start",
       "all_frames": false
+    },
+    {
+      "matches": ["https://*.ogame.gameforge.com/game/index.php?page=resourceSettings*"],
+      "js": ["common/scripts/resourceSettings.js"],
+      "css": ["common/styles/resourceSettings.css"],
+      "run_at": "document_start",
+      "all_frames": false
+    },
+    {
+      "matches": ["https://*.ogame.gameforge.com/game/index.php?page=movement*"],
+      "js": ["common/scripts/movement.js"],
+      "css": ["common/styles/movement.css"],
+      "run_at": "document_start",
+      "all_frames": false
     }
   ],
   "browser_action": {

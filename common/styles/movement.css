@@ -1,0 +1,71 @@
+.listOfResourceSettingsPerPlanet {
+    width: 100vw !important;
+}
+
+.fleetDetails.detailsOpened {
+    width: 100vw !important;
+    height: 180px !important;
+}
+
+.starStreak {
+    top: 62px !important;
+    left: 0px !important;
+}
+
+.destinationData {
+    left: auto !important;
+    right: 7px !important;
+}
+
+.reversal.reversal_time {
+    top: 30px !important;
+    left: 50vw !important;
+}
+
+.nextTimer, .nextabsTime, .nextMission {
+    left: auto !important;
+    width: auto !important;
+    right: 10px !important;
+}
+
+.nextTimer {
+    top: 30px !important;
+}
+
+.nextMission {
+    top: 42px !important;
+}
+
+.recallTimer {
+    position: absolute;
+    right: 51vw;
+    top: 22px;
+    line-height: 12px !important;
+}
+
+.composition {
+    position: absolute;
+    left: 7px;
+    top: 110px;
+    font-size: 12px;
+    line-height: 14px !important;
+    color: #bbb;
+}
+
+
+.fleetStatus {
+    width: 100vw !important;
+}
+
+
+.fleetStatus .fleetSlots, .fleetStatus .expSlots {
+    margin-left: 50px !important;
+}
+
+.originPlanet {
+    left: 45px !important;
+}
+
+.destinationPlanet {
+    right: 55px !important;
+}

@@ -87,9 +87,24 @@
             const highscoreButton = $('#bar li a').eq(1);
             const friendsButton = $('#bar li a').eq(3);
 
+            const movementsUrl = $('#menuTable .menu_icon a').eq(0).attr('href').replace(/\?page=.*/, '?page=movement');
+            const movementsName = 'Fleet movement';  // no way to find localisation for now
             addLi(optionButton);
             addLi(highscoreButton);
             addLi(friendsButton);
+
+            $('ul#menuTable li').eq(7).after(`
+            <li>
+                <span class="menu_icon">
+                    <div class="menuImage shipyard"></div>
+                </span>
+                <a id="OM_options" class="menubutton" href="` + movementsUrl + `" accesskey="" target="_self">
+                    <span class="textlabel">
+                        ` + movementsName + `
+                    </span>
+                </a>
+            </li>`);
+    
             clearInterval(addLis);
         }
     });
