@@ -87,6 +87,11 @@
             const highscoreButton = $('#bar li a').eq(1);
             const friendsButton = $('#bar li a').eq(3);
 
+            const jumpgateUrl = $('#menuTable li').eq(2).find('a').attr('href');
+            const onMoon = jumpgateUrl.search('Jumpgate()') !== -1;
+
+            console.log(onMoon, jumpgateUrl);
+
             const movementsUrl = $('#menuTable .menu_icon a').eq(0).attr('href').replace(/\?page=.*/, '?page=movement');
             const movementsName = 'Fleet movement';  // no way to find localisation for now
             addLi(optionButton);
@@ -104,7 +109,21 @@
                     </span>
                 </a>
             </li>`);
-    
+
+            if (onMoon) {
+                $('ul#menuTable li').eq(2).after(`
+                <li>
+                    <span class="menu_icon">
+                        <div class="menuImage shipyard"></div>
+                    </span>
+                    <a id="OM_options" class="menubutton" href="` + jumpgateUrl + `" accesskey="" target="_self">
+                        <span class="textlabel">
+                            ` + 'JumpGate' + `
+                        </span>
+                    </a>
+                </li>`);
+            }
+
             clearInterval(addLis);
         }
     });

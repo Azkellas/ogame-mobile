@@ -212,7 +212,9 @@ td.sendProbe, td.sendMail {
     right: 0px !important;
     width: 100vw !important;
     padding: 0px !important;
+    top: 0px !important
 }
+
 
 form#searchForm {
     width: 100vw !important;
@@ -220,4 +222,40 @@ form#searchForm {
 
 #message #inhalt .contentz {
     width: 100vw !important;
+}
+
+
+
+
+/* jumpgate */
+
+.ui-button-icon-primary {
+    margin-top: 2px !important;
+}
+
+.overlayDiv {
+    height: 95vh !important;
+    top: 0px !important;
+}
+
+#jumpgate {
+    width: 98vw !important;
+}
+
+#jumpgate table {
+    width: 100vw !important;
+}
+
+#jumpgate table tr td {
+    word-wrap: break-word;
+    display: inline-block;
+    /* margin-top: 100px; */
+}
+
+#jumpgateForm {
+    width: 100vw !important;
+}
+
+.js_executeJumpButton {
+    margin-right: 20px !important;
 }
